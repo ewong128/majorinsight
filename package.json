@@ -1,0 +1,15 @@
+{
+  "name": "majorinsight",
+  "version": "1.0.0",
+  "description": "An application that has reviews per major per Cal Poly college undergrad/master program.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "emily",
+  "license": "ISC"
+  ,
+    "workspaces": [
+        "packages/*"
+    ]
+}

@@ -1,0 +1,37 @@
+body {
+    background-color: #f8f5e4; /* A soft, paper-like background color */
+    font-family: 'Dosis', sans-serif; /* Default font for body text */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Rubik Mono One', sans-serif;
+    color: #2c3e50; /* Darker color for contrast */
+}
+
+h1 a {
+    color: #2c3e50; /* Default color for links inside h1 */
+    text-decoration: none; /* Remove underline */
+}
+
+h1 a:hover {
+    color: blue; /* Change to blue on hover */
+}
+
+ul li {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #1e8449; /* Dark green color for the links */
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: #145a32; /* Darker green when hovered */
+}
