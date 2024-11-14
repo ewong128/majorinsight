@@ -1,5 +1,20 @@
 <!doctype html>
 <html lang="en">
+    <script type="importmap">
+        {
+          "imports": {
+            "@calpoly/mustang": "https://unpkg.com/@calpoly/mustang"
+          }
+        }
+      </script>
+      <script type="module">
+        import { define } from "@calpoly/mustang";
+        import { collegeElement } from "/scripts/component.js";
+      
+        define({
+          "college-section": collegeElement
+        });
+      </script>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +26,7 @@
             rel="stylesheet" />
 
         <link rel="stylesheet" href="styles/page.css" />
+        <link rel="stylesheet" href="styles/token.css" />
     </head>
     <body>
         <h1>  <svg class="icon">
@@ -19,43 +35,55 @@
         <h4>CAL POLY EDITION</h4>
         <h1>College Collection</h1>
         <h4>Experiences of LEARN BY DOING changing lives actively!</h4>
-        <p>Note: "If you click on the acroynm, it will redirect you to the CalPoly website!"</p>
         <h2>College Of</h2>
-        <h3>AGRICULTURE, FOOD AND ENVIRONMENTAL SCIENCES <a href="https://cafes.calpoly.edu/">[CAFES]</a></h3>
-        <ul>
-            <li><a href="undergrad.html">Undergrad Programs</a></li>
-            <li><a href="blended.html">Blended Programs</a></li>
-            <li><a href="master.html">Master Program</a></li>
-        </ul>
-
-        <h3>ARCHITECTURE AND ENVIRONMENTAL DESIGN <a href="https://caed.calpoly.edu/">[CAED]</a></h3>
-        <ul>
-            <li><a href="undergrad.html">Undergrad Programs</a></li>
-            <li><a href="blended.html">Blended Programs</a></li>
-            <li><a href="master.html">Master Program</a></li>
-        </ul>
-        <h3>ENGINEERING <a href="https://ceng.calpoly.edu/">[CENG]</a></h3>
-        <ul>
-            <li><a href="undergrad.html">Undergrad Programs</a></li>
-            <li><a href="blended.html">Blended Programs</a></li>
-            <li><a href="master.html">Master Program</a></li>
-        </ul>
-        <h3>LIBERAL ARTS <a href="https://cla.calpoly.edu/">[CLA]</a></h3>
-        <ul>
-            <li><a href="undergrad.html">Undergrad Programs</a></li>
-            <li><a href="blended.html">Blended Programs</a></li>
-            <li><a href="master.html">Master Program</a></li>
-        </ul>
-        <h3>BAILEY COLLEGE OF SCIENCE AND MATHEMATICS <a href="https://cosam.calpoly.edu/">[BCOSAM]</a></h3>
-        <ul>
-            <li><a href="undergrad.html">Undergrad Programs</a></li>
-            <li><a href="blended.html">Blended Programs</a></li>
-            <li><a href="master.html">Master Program</a></li>
-        </ul>
-        <h3>ORFALEA COLLEGE OF BUSINESS <a href="https://www.calpoly.edu/orfalea-college-of-business">[OCOB]</a></h3>
-        <ul>
-            <li><a href="undergrad.html">Undergrad Programs</a></li>
-            <li><a href="master.html">Master Program</a></li>
-        </ul>
+        <college-section>
+            <a slot="link"  href="https://cafes.calpoly.edu/">[CAFES] AGRICULTURE, FOOD AND ENVIRONMENTAL SCIENCES </a>
+            <ul>
+              <li><a href="undergrad.html">Undergrad Programs</a></li>
+              <li><a href="blended.html">Blended Programs</a></li>
+              <li><a href="master.html">Master Program</a></li>
+            </ul>
+             
+        </college-section>
+        <college-section>
+          <a slot="link" href="https://caed.calpoly.edu/">[CAED] ARCHITECTURE AND ENVIRONMENTAL DESIGN </a>
+            <ul>
+                <li><a href="undergrad.html">Undergrad Programs</a></li>
+                <li><a href="blended.html">Blended Programs</a></li>
+                <li><a href="master.html">Master Program</a></li>
+            </ul>
+          
+        </college-section>
+        <college-section>
+          <a slot="link" href="https://ceng.calpoly.edu/">[CENG] ENGINEERING</a>
+            <ul>
+              <li><a href="undergrad.html">Undergrad Programs</a></li>
+              <li><a href="blended.html">Blended Programs</a></li>
+              <li><a href="master.html">Master Program</a></li>
+            </ul>
+        </college-section>
+        <college-section>
+          <a slot="link" href="https://cla.calpoly.edu/">[CLA] LIBERAL ARTS</a>
+            <ul>
+              <li><a href="undergrad.html">Undergrad Programs</a></li>
+              <li><a href="blended.html">Blended Programs</a></li>
+              <li><a href="master.html">Master Program</a></li>
+            </ul>
+        </college-section>
+        <college-section>
+          <a slot="link" href="https://cosam.calpoly.edu/">[BCOSAM] BAILEY COLLEGE OF SCIENCE AND MATHEMATICS</a>
+            <ul>
+              <li><a href="undergrad.html">Undergrad Programs</a></li>
+              <li><a href="blended.html">Blended Programs</a></li>
+              <li><a href="master.html">Master Program</a></li>
+              </ul>
+        </college-section>
+        <college-section>
+          <a slot="link" href="https://www.calpoly.edu/orfalea-college-of-business">[OCOB] ORFALEA COLLEGE OF BUSINESS </a>
+            <ul>
+              <li><a href="undergrad.html">Undergrad Programs</a></li>
+              <li><a href="master.html">Master Program</a></li>
+            </ul>
+        </college-section>
     </body>
 </html>

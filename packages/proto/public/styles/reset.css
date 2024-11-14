@@ -1,3 +1,4 @@
+/* reset.css */
 * {
     margin: 0;
     box-sizing: border-box;
@@ -7,6 +8,6 @@
   }
   img {
     max-width: 100%;
-  }
+  } 
 
-  /* Will make some changes in the future */
+ /* Will make some changes in the future  */

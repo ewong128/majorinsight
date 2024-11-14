@@ -1,1 +1,59 @@
-/* Working on this page */
+/*  */
+:root {
+    /* Background Colors */
+    --color-background-body: #e7e1bf; /* Soft, paper-like color for the body background */
+    --color-background-header: #2c3e50; /* Darker header background */
+    
+    /* Text Colors */
+    --color-text-body: #2c3e50; /* Darker color for main body text */
+    --color-text-header: #2c3e50; /* White text for headers */
+    --color-link: #1e8449; /* Dark green color for links */
+    --color-link-hover: #145a32; /* Darker green for links when hovered */
+    --color-accent: blue; /* Accent color for link hover in headers */
+
+    /* SVG Icons */
+    --color-icon-fill: currentColor; /* Fill color for SVG icons */
+}
+
+/* Typography Tokens */
+:root {
+    /* Font Family */
+    --font-family-body: 'Dosis', sans-serif; /* Font for body text */
+    --font-family-header: 'Rubik Mono One', sans-serif; /* Font for headers */
+
+    /* Font Sizes */
+    --font-size-body: 1rem;
+    --font-size-h1: 2rem;
+    --font-size-h2: 1.75rem;
+    --font-size-h3: 1.5rem;
+    --font-size-list-item: 1.2rem;
+}
+
+/* Layout Tokens */
+:root {
+    /* Spacing */
+    --padding-body: 20px;
+    --margin-body: 0;
+
+    /* Line Height */
+    --line-height-body: 1.6;
+}
+
+
+body.dark-mode {
+    --color-background-page: rgb(3, 69, 2);
+    --color-text-header: rgb(240, 240, 223);
+    --color-background-card: black;
+    --color-accent: rgb(161, 161, 220);
+    --color-text-control: rgb(239, 227, 227);
+    --color-text-control-inverted: var(--color-background-page);
+    --color-icon-fill: White; 
+  }
+  head {
+    color: rgb(239, 227, 227);
+  }
+  body {
+    background-color: var(--color-background-page);
+    color: var(--color-text);
+  }
+  

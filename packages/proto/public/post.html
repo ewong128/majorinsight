@@ -1,38 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Post Page</title>
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Dosis:wght@400;700&display=swap" rel="stylesheet">
-
-                  <link rel="stylesheet" href="styles/page.css" />
-    </head>
-    <body>
-        <h1>  <svg class="icon">
+<head>
+    <meta charset="UTF-8" />
+    <title>Post Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Dosis:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/page.css" />
+    <link rel="stylesheet" href="styles/token.css" />
+</head>
+<body>
+    <h1>
+        <svg class="icon">
             <use href="/icons/education.svg#icon-gradcap" />
-            </svg><a href="index.html">Rate My Major</a></h1>
-        <h4>CAL POLY EDITION</h4>
-        <h1>Making a Post</h1>
-        <p>Hello, you have arrived at the page to make a post, just a few things to note.</p>
-        <h3>Rules</h3>
-        <ul>
+        </svg>
+        <a href="index.html">Rate My Major</a>
+    </h1>
+    <h4>CAL POLY EDITION</h4>
+
+    <svg class="icon">
+        <use href="/icons/education.svg#icon-post" />
+    </svg>
+    <h1>Making a Post</h1>
+    <p>Hello, you have arrived at the page to make a post. Just a few things to note:</p>
+
+    <h3>Rules</h3>
+    <ul>
         <li>Please fill out every entry</li>
         <li>Do not use any foul or inappropriate language, keep it PG-13</li>
-        <li>Please be honest and truthful to your post</li></ul>
-        <h2>Let's Make A Post</h2>
-        <br>Name: (Can put Anomyous or can put name/nickname)
-        <br>Year of Graduation(Can be Expected if not yet graduated or last time of attendance if Dropout):
-        <br>Major:[DropDown]
-        <br>Program Type:(Undergrad/Blended/Master)[DropDown]
-        <br>Start at Cal Poly:(Freshmen/Transfer/NA)[DropDown]
-        <br>Review:
-        <br>Hardest Class Taken:
-        <br>Favorite Class Taken:
-        <br>Advice:
-        <br>Rating:
-        <br>
-        <br>SUBMIT
-    </body>
+        <li>Please be honest and truthful in your post</li>
+    </ul>
+
+    <h2>Let's Make A Post</h2>
+
+    <form action="/submit_post" method="post">
+        <label for="name">Name: (Can put "Anonymous" or your name/nickname)</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="graduation-year">Year of Graduation:</label><br>
+        <input type="text" id="graduation-year" name="graduation-year" placeholder="Expected year if not yet graduated" required><br><br>
+
+        <label for="major">Major:</label><br>
+        <select id="major" name="major" required>
+            <option value="" disabled selected>Select your major</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="business">Business</option>
+            <option value="engineering">Engineering</option>
+            <!-- Need to add more majors-->
+        </select><br><br>
+
+        <label for="program-type">Program Type:</label><br>
+        <select id="program-type" name="program-type" required>
+            <option value="" disabled selected>Select program type</option>
+            <option value="undergrad">Undergrad</option>
+            <option value="blended">Blended</option>
+            <option value="master">Master</option>
+        </select><br><br>
+
+        <label for="start-year">Start at Cal Poly:</label><br>
+        <select id="start-year" name="start-year" required>
+            <option value="" disabled selected>Select start year</option>
+            <option value="freshmen">Freshmen</option>
+            <option value="transfer">Transfer</option>
+            <option value="na">N/A</option>
+        </select><br><br>
+
+        <label for="review">Review:</label><br>
+        <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="hardest-class">Hardest Class Taken:</label><br>
+        <input type="text" id="hardest-class" name="hardest-class" required><br><br>
+
+        <label for="favorite-class">Favorite Class Taken:</label><br>
+        <input type="text" id="favorite-class" name="favorite-class" required><br><br>
+
+        <label for="advice">Advice:</label><br>
+        <textarea id="advice" name="advice" rows="3" cols="50" required></textarea><br><br>
+
+        <label for="rating">Rating (1-5):</label><br>
+        <input type="number" id="rating" name="rating" min="1" max="5" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <svg class="icon">
+        <use href="/icons/education.svg#icon-like" />
+    </svg>
+</body>
 </html>
