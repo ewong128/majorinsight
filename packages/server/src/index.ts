@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
 import { Post } from "models";
+// import post from "./routes/post";
 
 // import { PostPage } from "./pages/post";
 // import Post from "./services/post-svc";
@@ -25,6 +26,8 @@ app.use(express.static(staticDir));
 
 // Middleware:
 app.use(express.json());
+// Need to fix below because it is not working
+// app.use("/api/post", post);
 
 app.get("/hello", (req: Request, res: Response) => {
     res.send("Hello, World");

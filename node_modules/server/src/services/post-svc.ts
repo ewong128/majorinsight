@@ -14,6 +14,41 @@ const PostSchema = new Schema<Post>(
 
 const PostModel = model<Post>("Profile", PostSchema);
 
+function create(json: Post): Promise<Post> {
+  const t = new PostModel(json);
+  return t.save();
+}
+
+
+// Part of the PUT method in Lab 11 [maybe need to fix]
+function update(
+  userid: String,
+  post: Post
+): Promise<Post> {
+  return PostModel.findOneAndUpdate({ userid }, post, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${userid} not updated`;
+    else return updated as Post;
+  });
+}
+
+
+function remove(userid: String): Promise<void> {
+  return PostModel.findOneAndDelete({ userid }).then(
+    (deleted) => {
+      if (!deleted) throw `${userid} not deleted`;
+    }
+  );
+}
+
+// Put the line below on the bottom of file, there are errors because there are some stuff missing, need to fix
+// export default { index, get, create, update, remove };
+
+
+
+
+
 // const posts = {
 //   ceng: {
 //     name: "Emmy",
