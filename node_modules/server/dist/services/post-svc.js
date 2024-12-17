@@ -11,3 +11,22 @@ const PostSchema = new import_mongoose.Schema(
   { collection: "review" }
 );
 const PostModel = (0, import_mongoose.model)("Profile", PostSchema);
+function create(json) {
+  const t = new PostModel(json);
+  return t.save();
+}
+function update(userid, post) {
+  return PostModel.findOneAndUpdate({ userid }, post, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${userid} not updated`;
+    else return updated;
+  });
+}
+function remove(userid) {
+  return PostModel.findOneAndDelete({ userid }).then(
+    (deleted) => {
+      if (!deleted) throw `${userid} not deleted`;
+    }
+  );
+}

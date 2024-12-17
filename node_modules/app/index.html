@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Home Page</title>
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Dosis:wght@400;700&display=swap"
+            rel="stylesheet" />
+        
+        <link rel="stylesheet" href="styles/page.css" />
+        <link rel="stylesheet" href="styles/token.css" />
+        
+        <label>
+            <input type="checkbox" id="dark-mode-toggle" />
+            Dark mode
+          </label>
+         
+          <script type="module">
+            import { define, Auth } from "@calpoly/mustang";
+        //    import { HeaderElement } from "/scripts/header.js";
+            // <script type="module">
+            // import { define, Auth, Events } from "@calpoly/mustang";
+
+            // define({ "mu-auth": Auth.Provider });
+            // window.relayEvent = Events.relay;
+            // </script>
+            <script type="module">
+                import { define, Auth } from "@calpoly/mustang";
+                import { CollegeHeaderElement } from "/src/components/college-header";
+              
+                define({
+                  "mu-auth": Auth.Provider,
+                  "college-header": CollegeHeaderElement
+                });
+              </script>
+            define({
+              "blz-header": HeaderElement,
+              "mu-auth": Auth.Provider
+            });
+          
+            HeaderElement.initializeOnce();
+          </script>
+    </head>
+    <body>
+      <!-- <mu-auth provides="blazing:auth"> -->
+        <mu-auth provides="blazing:auth" redirect="./login.html"></mu-auth>
+        <main class="page">
+          <h1>
+            <svg class="icon">
+        <use href="/icons/education.svg#icon-gradcap" />
+        </svg>
+    Welcome to <a href="index.html">Rate My Major</a><h3>Cal Poly Edition</h3></h1>
+            <h4>Home of the Mustangs!!!</h4>
+            <p>Below is a list of links to instances of the root concept:</p>
+            <ul>
+                <li><a href="college.html">Look up your College & Program</a></li>
+                <li><a href="undergrad.html">Undergrad Program Search</a></li>
+                <li><a href="master.html">Master Program Search</a></li>
+                <li><a href="csse.html">Are you a computer science major?</a></li>
+                <li><a href="post.html">Making a Post</a></li>
+                <li><a href="profile.html">Making an Account</a></li>
+            </ul>
+        <img src="calpoly.jpg" alt="Image of the Cal Poly Campus" width="1350">
+    
+        </main>
+      </mu-auth>
+      <a slot="actuator">
+        Hello,
+        <span id="userid"></span>
+      </a>
+    
+    </body>
+    <script type="module">
+        import { define, Auth } from "@calpoly/mustang";
+      
+        define({ "mu-auth": Auth.Provider });
+      </script>
+
+get userid() {
+    return this._userid.textContent;
+  }
+
+  set userid(id) {
+    if (id === "anonymous") {
+      this._userid.textContent = "";
+      this._signout.disabled = true;
+    } else {
+      this._userid.textContent = id;
+      this._signout.disabled = false;
+    }
+  }
+</html>

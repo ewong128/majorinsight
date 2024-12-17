@@ -100,6 +100,23 @@ class PostPage {
       </review-post>
     `;
   }
+  // Lab 13, there are some issue with the following
+  // _authObserver = new Observer(this, "blazing:auth");
+  // connectedCallback(); {
+  //   this._authObserver.observe(({ user }) => {
+  //     this._user = user;
+  //   });
+  // }
+  // get authorization() {
+  //     return (
+  //       this._user?.authenticated && {
+  //         Authorization: `Bearer ${this._user.token}`
+  //       }
+  //     );
+  //   }
+  //   fetch(url, { headers: this.authorization }).then((res) => {
+  //     // handle the response
+  //   });
   // render() {
   //   return renderPage({
   //     body: this.renderBody(),

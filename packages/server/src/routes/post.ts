@@ -4,7 +4,7 @@ import { Post } from "../models/post";
 // Need to uncomment after changing some stuff [There is some issue need to fix]
 // import Post from "../services/post-svc";
 
-const router = express.Router();
+
 
 // Need to fix this to portray my project!!!!
 
@@ -76,3 +76,14 @@ const router = express.Router();
 //       .then(() => res.status(204).end())
 //       .catch((err) => res.status(404).send(err));
 //   });
+
+const router = express.Router();
+_authObserver = new Observer(this, "blazing:auth");
+
+connectedCallback() {
+  this._authObserver.observe(({ user }) => {
+    if (user && user.username !== this.userid) {
+      this.userid = user.username;
+    }
+  });
+}

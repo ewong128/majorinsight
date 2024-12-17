@@ -1,0 +1,46 @@
+h1{
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #2c3e50;
+}
+
+h3{
+  font-family: "Yatra One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+body {
+  /* font-family:; */
+  background-color: #f4f4f4;
+  padding: 20px;
+  line-height: 1.6;
+  display: grid;
+  grid-template-columns: 1fr 3fr; 
+  grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-side {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.right-side {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  body {
+      grid-template-columns: 1fr; 
+  }
+}

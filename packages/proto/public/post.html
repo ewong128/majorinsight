@@ -87,4 +87,13 @@
         <use href="/icons/education.svg#icon-like" />
     </svg>
 </body>
+
+_authObserver = new Observer(this, "blazing:auth");
+
+connectedCallback() {
+  this._authObserver.observe(({ user }) => {
+    this._user = user;});
+}
+
+
 </html>

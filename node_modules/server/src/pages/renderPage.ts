@@ -15,7 +15,7 @@ import {
       import { HeaderElement } from "/scripts/header.js";
   
       define({
-        "blz-header": HeaderElement
+        "post-header": HeaderElement
       });
   
       HeaderElement.initializeOnce();
